@@ -1,0 +1,60 @@
+# This workflow is used to submit a student's code to Pawtograder and run the grader on it
+# See https://github.com/pawtograder/assignment-action for more on how this works
+
+# To the intrepid student: You must not edit this file. Tampering with this file could 
+# reveal the instructor's solution to you. Hence, Pawtograder will automatically compare
+# the hash of this file (when the submission is being created) to the hash of the file 
+# provided in your handout. In addition to failing to register a submission (and not
+# providing the workflow with access to the instructor's solution), your instructors will
+# be notified of this security violation.
+
+name: Submit Assignment and Run Grader
+permissions:
+  id-token: write
+  contents: read
+on:
+  # Required for Pawtograder to create a submission, do not remove
+  workflow_dispatch:
+
+  # To change the behavior of submitting on every push (vs just when commit has message
+  # submit or when the submission is manually requested), change this:
+  push:
+    branches:
+      - main
+
+jobs:
+  grade:
+    name: Submit and Grade Assignment
+    runs-on: khoury-course-runners
+    # khoury-course-runners provides 1CPU, 1.5GB RAM
+    # khoury-course-runners-md provides 2CPU, 3GB RAM
+    # khoury-course-runners-lg provides 4CPU, 6GB RAM
+
+    # Using more resources will limit concurrency, so use the smallest resource class that
+    # can handle the workload.
+
+    steps:
+      - name: Checkout
+        id: checkout
+        uses: actions/checkout@v4
+        with:
+          path: submission
+      # The base image does NOT have Java, Python etc. So install what you need here, e.g.:
+      #- name: Install Java
+      #  uses: actions/setup-java@v4
+      #  with:
+      #    distribution: 'temurin' 
+      #    java-version: '21'
+      # - name: Install Python
+      #   uses: actions/setup-python@v4
+      #   with:
+      #     python-version: '3.10'
+      #     cache: 'pip'
+      #- name: Install dependencies
+      #  run: pip install -r requirements.txt
+      - name: Collect Submission and Run Grader
+        uses: pawtograder/assignment-action@v3 # Update version here
+        with:
+          grading_server: 'https://api.pawtograder.com'
+          action_ref: '${{ github.action_ref }}'
+          action_repository: '${{ github.action_repository }}'
