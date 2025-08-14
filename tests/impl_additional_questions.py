@@ -18,7 +18,7 @@ class TestAdditionalQuestions(unittest.TestCase):
         with patch('builtins.input', side_effect=['y', 'n']):
             result = self.question_asker.ask_additional_questions()
             # Update these keys based on your actual additional questions:
-            # Expected result format: {'question1_key': True, 'question2_key': False}
+            # Expected result format: ['question1_key'] (since first was 'y', second 'n')
             # Common examples: 'old23', 'honors', 'athlete', 'work_study', etc.
             # self.assertEqual(result, ['old23'])
             pass
@@ -27,7 +27,8 @@ class TestAdditionalQuestions(unittest.TestCase):
         """Test ask_additional_questions with n/y responses."""
         with patch('builtins.input', side_effect=['n', 'y']):
             result = self.question_asker.ask_additional_questions()
-            # Test with opposite responses (n first, y second):
+            # Update these keys based on your actual additional questions:
+            # Test with opposite responses (n first, y second)
             # self.assertEqual(result, ['honors'])
             pass
 
@@ -35,7 +36,8 @@ class TestAdditionalQuestions(unittest.TestCase):
         """Test ask_additional_questions with uppercase responses."""
         with patch('builtins.input', side_effect=['Y', 'N']):
             result = self.question_asker.ask_additional_questions()
-            # Test that uppercase Y/N work correctly:
+            # Update these keys based on your actual additional questions:
+            # Test that uppercase Y/N work correctly
             # self.assertEqual(result, ['old23'])
             pass
 
@@ -43,7 +45,8 @@ class TestAdditionalQuestions(unittest.TestCase):
         """Test ask_additional_questions with some invalid inputs."""
         with patch('builtins.input', side_effect=['invalid', 'y', 'maybe', 'n']):
             result = self.question_asker.ask_additional_questions()
-            # Test that the method handles invalid input gracefully for both questions:
-            # Expected: should return proper dict after rejecting 'invalid' and 'maybe'
+            # Update these keys based on your actual additional questions:
+            # Test that the method handles invalid input gracefully for both questions
+            # Expected: should return proper list after rejecting 'invalid' and 'maybe'
             # self.assertEqual(result, ['old23'])
             pass

@@ -74,13 +74,13 @@ class HousingPriorityCalculator:
 
     def points_for_additional_questions(self, responses: list[str]) -> int:
         """
-        Given the dict from ask_additional_questions(), assign points.
+        Given the list from ask_additional_questions(), assign points.
 
         IMPORTANT: Write your tests FIRST!
 
         Example:
-        - 'old23': True → 2 points, False → 0 points
-        - 'honors': True → 3 points, False → 0 points
+        - 'old23': Answered Yes → 2 points, Answered No → 0 points
+        - 'honors': Answered Yes → 3 points, Answered No → 0 points
         - Total for ['old23'] = 2 points
         - Total for ['old23', 'honors'] = 2 + 3 = 5 points
 
