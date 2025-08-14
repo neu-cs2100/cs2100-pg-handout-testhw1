@@ -52,64 +52,65 @@ class TestHousingPriorityCalculator(unittest.TestCase):
 
     def test_points_for_credits_zero(self) -> None:
         """Test points_for_credits with 0 credits."""
-        # What should 0 credits give?
-        # result = self.priority_calculator.points_for_credits(0)
-        # self.assertEqual(result, 0)
+        # How many points should 0 credits give?
         pass
 
     def test_points_for_credits_low(self) -> None:
-        """Test points_for_credits with low credit count (e.g., 7)."""
+        """Test points_for_credits with low credit count, based on your system."""
         pass
 
     def test_points_for_credits_medium(self) -> None:
-        """Test points_for_credits with medium credit count (e.g., 15)."""
-        # Test your scoring system with 15 credits
+        """Test points_for_credits with medium credit count, based on your system."""
         pass
 
     def test_points_for_credits_high(self) -> None:
-        """Test points_for_credits with high credit count (e.g., 30)."""
-        # Test your scoring system with 30 credits
+        """Test points_for_credits with high credit count, based on your system."""
         pass
 
     def test_points_for_additional_questions_all_true(self) -> None:
         """Test points_for_additional_questions with all True responses."""
-        # Based on YOUR additional questions and scoring:
-        # If you ask 'old23' (2 pts) and 'honors' (3 pts):
-        # responses = {'old23': True, 'honors': True}
+        # Uncomment and write test based on YOUR additional questions and scoring:
+        # For example, if you ask 'old23' (2 pts) and 'honors' (3 pts):
+        # responses = ['old23', 'honors']
+        # result = HousingPriorityCalculator().points_for_additional_questions(responses)
+        # expected_points = 5  # 2 + 3
+        # self.assertEqual(result, expected_points)
         pass
 
     def test_points_for_additional_questions_all_false(self) -> None:
         """Test points_for_additional_questions with all False responses."""
-        # Usually all False should give 0 points:
-        # responses = {'old23': False, 'honors': False}
+        # Usually all False should give 0 points, but depends on your system.
+        # However, you should not provide negative points.
+        # responses = []
         pass
 
     def test_points_for_additional_questions_mixed(self) -> None:
         """Test points_for_additional_questions with mixed responses."""
-        # Test partial points:
-        # responses = {'old23': True, 'honors': False}
+        # Test partial points, ie. one question answered 'yes', one 'no'
         pass
 
     def test_calculate_total_score_freshman_scenario(self) -> None:
         """Test calculate_total_score for a freshman scenario."""
-        # Calculate expected total based on YOUR scoring system
+        # Uncomment and write test based on YOUR additional questions and scoring:
         # Example scenario: year=1, is_graduating=False, credits=8,
-        #  additional_responses={'old23': False, 'honors': True}
-        # If your system: freshman=10pts, not_graduating=0pts, credits=8pts, honors_only=3pts
+        #  additional_responses=['honors']
+        # If your system: freshman=10pts, not_graduating=0pts, credits=8pts, honors=3pts
         # expected_total = 10 + 0 + 8 + 3 = 21
         pass
 
     def test_calculate_total_score_senior_graduating_scenario(self) -> None:
         """Test calculate_total_score for a graduating senior scenario."""
-        # Calculate expected total for: year=4, is_graduating=True, credits=16,
-        #  additional_responses={'old23': True, 'honors': True}
+        # Uncomment and write test based on YOUR additional questions and scoring:
+        # Example scenario: year=4, is_graduating=True, credits=16,
+        #  additional_responses=['old23', 'honors']
         # Work out the math based on YOUR scoring system first!
         pass
 
     def test_calculate_total_score_senior_non_graduating_scenario(self) -> None:
         """Test calculate_total_score for a non-graduating senior scenario."""
-        # Calculate expected total for: year=4, is_graduating=False, credits=20,
-        #  additional_responses={'old23': False, 'honors': False}
+        # Uncomment and write test based on YOUR additional questions and scoring:
+        # Example scenario: year=4, is_graduating=False, credits=20,
+        #  additional_responses = [] (Both questions answered 'no')
         # Work out the math based on YOUR scoring system first!
         pass
 
@@ -119,6 +120,4 @@ class TestHousingPriorityCalculator(unittest.TestCase):
 
         # Note: you don't need to test for negative credits or invalid years,
         # since your question asker should be disallowing negative inputs anyway.
-
-
         pass

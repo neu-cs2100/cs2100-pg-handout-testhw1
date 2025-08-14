@@ -84,6 +84,7 @@ You must write all interface tests (`test_*.py`) before
 - **Test edge cases** (invalid years, negative credits, etc.)
 
 #### 3c. Complete `impl_additional_questions.py`
+See Part 5 (Extending additional questions) for more details about this. 
 - **Write specific test cases** based on the additional questions that you choose to ask.
 - **Fill in expected values** for each test method
 - **Test edge cases** (invalid years, uppercase/lowercase input, etc.) 
@@ -123,9 +124,9 @@ Now implement the actual methods in the order that makes sense:
 
 ### Part 5: Extending Additional Questions
 * **Add exactly two new yes/no prompts** (e.g., older than 23?, honors student?)
-* **Update your tests first** to include these new questions, if you haven't done so already
-* **Then implement** the functionality to make tests pass
-* **Return** a dictionary where each key corresponds to a question and the value is a boolean
+* **Update your tests first** to include these new questions. Note that these are *implementation specific* tests, since they are specific to the exact questions that you are choosing to ask. Therefore, you should put your tests in impl_additional_questions.py.
+* **Then implement** the ask_additional_questions method in question_asker.py in accordance with your tests.
+* **Return** a list of keys that indicate the questions for which the student answered yes
 
 ### Part 6: Final Testing and Integration
 * **Run all tests** to ensure everything passes:
