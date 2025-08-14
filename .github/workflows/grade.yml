@@ -8,6 +8,11 @@
 # providing the workflow with access to the instructor's solution), your instructors will
 # be notified of this security violation.
 
+# To the instructor: You *can* edit this file easily before the assignment is released and
+# student repos have been created. If you make changes after student repos have been created,
+# Pawtograder can automatically update student repos for you, but it also makes a nucance for 
+# students who have to do an extra `git pull` before their next `push`.
+
 name: Submit Assignment and Run Grader
 permissions:
   id-token: write
@@ -39,19 +44,15 @@ jobs:
         uses: actions/checkout@v4
         with:
           path: submission
-      # The base image does NOT have Java, Python etc. So install what you need here, e.g.:
-      #- name: Install Java
-      #  uses: actions/setup-java@v4
-      #  with:
-      #    distribution: 'temurin' 
-      #    java-version: '21'
-      # - name: Install Python
-      #   uses: actions/setup-python@v4
-      #   with:
-      #     python-version: '3.10'
-      #     cache: 'pip'
-      #- name: Install dependencies
-      #  run: pip install -r requirements.txt
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+          
+      - name: Install Dependencies
+        working-directory: submission
+        run: |
+          python -m pip install --upgrade pip
       - name: Collect Submission and Run Grader
         uses: pawtograder/assignment-action@v3 # Update version here
         with:

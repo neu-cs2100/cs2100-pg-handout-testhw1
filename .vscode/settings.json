@@ -1,0 +1,23 @@
+{
+    "pylint.args": [
+        "--disable=import-error"
+    ],
+    "pylint.severity": {
+        "convention": "Information",
+        "refactor": "Information",
+        "warning": "Information",
+        "error": "Error",
+        "fatal": "Error"
+    },
+    "pylint.enabled": true,
+    "pylint.importStrategy": "useBundled",
+    "pylint.showNotifications": "onError",
+    "mypy-type-checker.args": [
+        "--strict",
+        "--disallow-untyped-defs",
+        "--disable-error-code=empty-body",
+        "--explicit-package-bases"
+    ],
+    "mypy-type-checker.importStrategy": "useBundled",
+    "mypy-type-checker.showNotifications": "onError"
+}
