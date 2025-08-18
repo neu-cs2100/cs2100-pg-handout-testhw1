@@ -31,7 +31,6 @@ class HousingPriorityCalculator:
         
         DON'T IMPLEMENT UNTIL YOU'VE WRITTEN YOUR TESTS!
         """
-        # DON'T IMPLEMENT UNTIL YOU'VE WRITTEN YOUR TESTS!
         pass
 
     def points_for_graduation(self, is_graduating: bool) -> int:
@@ -72,17 +71,16 @@ class HousingPriorityCalculator:
         """
         pass
 
-    def points_for_additional_questions(self, responses: list[str]) -> int:
+    def points_for_additional_questions(self, responses: dict[str, bool]) -> int:
         """
-        Given the list from ask_additional_questions(), assign points.
+        Given the dict from ask_additional_questions(), assign points.
 
         IMPORTANT: Write your tests FIRST!
 
         Example:
-        - 'old23': Answered Yes → 2 points, Answered No → 0 points
-        - 'honors': Answered Yes → 3 points, Answered No → 0 points
-        - Total for ['old23'] = 2 points
-        - Total for ['old23', 'honors'] = 2 + 3 = 5 points
+        - 'old23': True → 2 points, False → 0 points
+        - 'honors': True → 3 points, False → 0 points
+        - Total for {'old23': True, 'honors': False} = 2 + 0 = 2 points
 
         Design your own questions and point values!
         
@@ -97,7 +95,7 @@ class HousingPriorityCalculator:
         year: int,
         is_graduating: bool,
         num_credits: int,
-        additional_responses: list[str],
+        additional_responses: dict[str, bool],
     ) -> int:
         """
         Calculate the total priority score based on all inputs.
@@ -111,12 +109,15 @@ class HousingPriorityCalculator:
             + self.points_for_credits(num_credits)
             + self.points_for_additional_questions(additional_responses)
         )
+
+        Here, you may assume that the responses dict contains valid keys
+        corresponding to the questions you designed in ask_additional_questions().
         
         Args:
             year (int): Class year (1-4)
             is_graduating (bool): Whether student is graduating this semester
             credits (int): Number of credits earned
-            additional_responses (list): List of additional question keys answered yes
+            additional_responses (dict): Dictionary of additional question responses
         Returns:
             int: Total priority score
             

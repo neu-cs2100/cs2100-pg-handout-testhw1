@@ -81,16 +81,14 @@ class HousingQuestionAsker:
         """
         pass
 
-    def ask_additional_questions(self) -> list[str]:
-        """
-        Ask at least two yes/no questions and return a list of question keys 
-        for which the answer was yes.
+    def ask_additional_questions(self) -> dict[str, bool]:
+        """Ask at least two yes/no questions and return a dict of responses.
         
         Requirements based on tests:
         - Ask exactly 2 additional yes/no questions
         - Accept 'y', 'Y', 'n', 'N' for each question
         - Handle invalid input gracefully for each question
-        - Return a list of keys (strings) for questions answered 'yes'
+        - Return a dictionary with descriptive keys and boolean values
         
         Example questions you might ask:
         - "Are you older than 23?" (key: 'old23')
@@ -109,14 +107,12 @@ class HousingQuestionAsker:
         3. Ask your second question with clear prompt
         4. Validate input (y/Y/n/N)
         5. Handle invalid input for both questions
-        6. Return a list of keys for questions answered 'yes'
+        6. Return dict with 2 keys and boolean values
         
         Example structure:
-        return [
-            'old23',
-            'honors'
-        ]
-        implies that the user answered 'yes' to both of these questions.
-        Any questions answered 'no' should not appear in the returned list.
+        return {
+            'your_first_key': boolean_result_1,
+            'your_second_key': boolean_result_2 
+            }
         """
         pass

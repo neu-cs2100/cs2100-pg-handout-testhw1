@@ -1,3 +1,6 @@
+> [!CAUTION]
+> This repository is for viewing only. Do not work on the assignment using this repository -- the actual course assignments will be provided to you via Pawtograder.
+
 # HW 1: Housing Priority Calculator
 
 ## Learning Outcomes
@@ -10,8 +13,10 @@
 ## Overview
 Welcome to your first programming assignment of the semester! In this assignment you will be building a housing "priority score" engine in Python that decides who gets the first pick of campus housing. You'll dive into human-centered design—chatting with users, uncovering their needs, and iterating on your plan—while mastering Python basics: grabbing input, crafting if/elif/else logic, performing arithmetic, and tallying up points.
 
+This assignment is based on this [Nifty Assignment](http://nifty.stanford.edu/2020/peck-decision-makers/).
+
 ## NOTE
-Although this assignment primarily focuses on writing tests before implementation, it should be general practice to formalize and think about concrete examples first before you writing code.
+Although this assignment primarily focuses on writing tests before implementation, it should be general practice to formalize and think about concrete examples first before writing code.
 
 
 This assignment introduces you to **object-oriented programming** by separating functionality into distinct classes:
@@ -72,7 +77,7 @@ The tests in file names starting with `test_`, on the other hand, are interface 
 
 For this assignment, you do not have to worry about segregating your tests into `test_` and `impl_` files, as we have already provided partially written tests in the appropriate files, but pay attention to why the tests have been split this way in the provided handout. 
 
-You must write all interface tests (`test_*.py`) before 
+You must write all interface tests (`test_*.py`) before implementing your functions.
 #### 3a. Complete `test_question_asker.py`
 - **Write tests** for input validation and error handling
 - **Test** invalid input followed by valid input scenarios
@@ -84,7 +89,6 @@ You must write all interface tests (`test_*.py`) before
 - **Test edge cases** (invalid years, negative credits, etc.)
 
 #### 3c. Complete `impl_additional_questions.py`
-See Part 5 (Extending additional questions) for more details about this. 
 - **Write specific test cases** based on the additional questions that you choose to ask.
 - **Fill in expected values** for each test method
 - **Test edge cases** (invalid years, uppercase/lowercase input, etc.) 
@@ -124,9 +128,9 @@ Now implement the actual methods in the order that makes sense:
 
 ### Part 5: Extending Additional Questions
 * **Add exactly two new yes/no prompts** (e.g., older than 23?, honors student?)
-* **Update your tests first** to include these new questions. Note that these are *implementation specific* tests, since they are specific to the exact questions that you are choosing to ask. Therefore, you should put your tests in impl_additional_questions.py.
-* **Then implement** the ask_additional_questions method in question_asker.py in accordance with your tests.
-* **Return** a list of keys that indicate the questions for which the student answered yes
+* **Update your tests first** to include these new questions, if you haven't done so already
+* **Then implement** the functionality to make tests pass
+* **Return** a dictionary where each key corresponds to a question and the value is a boolean
 
 ### Part 6: Final Testing and Integration
 * **Run all tests** to ensure everything passes:
