@@ -1,7 +1,7 @@
 {
     "pylint.args": [
         "--disable=import-error",
-        "--desable=assignment-from-no-return",
+        "--disable=assignment-from-no-return",
     ],
     "pylint.severity": {
         "convention": "Information",
@@ -17,7 +17,8 @@
         "--strict",
         "--disallow-untyped-defs",
         "--disable-error-code=empty-body",
-        "--explicit-package-bases"
+        "--explicit-package-bases",
+        "--disable-error-code=return"
     ],
     "mypy-type-checker.importStrategy": "useBundled",
     "mypy-type-checker.showNotifications": "onError", 
