@@ -3,9 +3,6 @@ HW 1: Housing Priority Calculator - Question Asker Module
 
 This module contains the HousingQuestionAsker class responsible for gathering user input.
 
-IMPORTANT: Do NOT implement these methods until you have completed ALL tests in 
-test_question_asker.py!
-
 Step 1: Complete all required items in test_question_asker.py
 Step 2: Run tests (they should fail) - this is expected!
 Step 3: Implement methods below to make tests pass
@@ -24,9 +21,6 @@ class HousingQuestionAsker:
         - Handle invalid input gracefully (keep asking until valid)
         - Return the class year as an integer
         
-        DO NOT IMPLEMENT until tests are written!
-        
-        Implement after writing tests
         Your implementation should:
         1. Display a clear prompt
         2. Get user input
@@ -48,9 +42,6 @@ class HousingQuestionAsker:
         NOTE: This method should ONLY be called for seniors (class year 4)
         The logic for when to call this is handled in hw1.py
         
-        DO NOT IMPLEMENT until tests are written!
-        
-        Implement after writing tests
         Your implementation should:
         1. Display a clear prompt
         2. Get user input
@@ -69,9 +60,6 @@ class HousingQuestionAsker:
         - Handle invalid input gracefully (non-numbers, negative numbers)
         - Return the valid integer
         
-        DO NOT IMPLEMENT until tests are written!
-        
-        Implement after writing tests
         Your implementation should:
         1. Display a clear prompt
         2. Get user input
@@ -98,9 +86,6 @@ class HousingQuestionAsker:
         
         Choose your own questions, but make sure your test keys match!
         
-        DO NOT IMPLEMENT until tests are written!
-        
-        Implement after writing tests
         Your implementation should:
         1. Ask your first question with clear prompt
         2. Validate input (y/Y/n/N)
