@@ -1,7 +1,5 @@
 """
 Unit tests for the HousingQuestionAsker class.
-
-IMPORTANT: Complete ALL test methods below BEFORE implementing any methods in question_asker.py
 """
 
 import unittest
@@ -16,10 +14,10 @@ class TestHousingQuestionAsker(unittest.TestCase):
         """Set up test fixtures before each test method."""
         self.question_asker = HousingQuestionAsker()
 
-
-
     def test_ask_class_year_valid_input(self) -> None:
-        """Test ask_class_year with valid input.
+        """Test ask_class_year with valid user input.
+        We use patch('builtins.input', ...) to specify user input 
+        that would normally be typed.
         
         This first test is already written for you. 
         
