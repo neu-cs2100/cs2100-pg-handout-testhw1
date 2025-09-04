@@ -7,7 +7,12 @@ from src.question_asker import HousingQuestionAsker
 
 
 class TestAdditionalQuestions(unittest.TestCase):
-    """Unit tests for the additional questions in HousingQuestionAsker."""
+    """Unit tests for the additional questions in HousingQuestionAsker.
+    
+    Note: We use patch('builtins.input', ...) to specify user input 
+    that would normally be typed. (See impl_hw1.py for more details.)
+    
+    """
 
     def setUp(self) -> None:
         """Set up test fixtures before each test method."""
