@@ -17,9 +17,6 @@ class HousingPriorityCalculator:
         Here, you may assume year is an integer from 1 to 4, since we already 
         validated input in the question asker. 
 
-        IMPORTANT: Write your tests in test_priority_calculator.py FIRST!
-        Then implement this method to make those tests pass.
-
         Example scoring systems:
         - Linear: Freshman=1, Sophomore=2, Junior=3, Senior=4
         - Exponential: Freshman=2, Sophomore=4, Junior=8, Senior=16
@@ -28,8 +25,6 @@ class HousingPriorityCalculator:
         Document your chosen system in SUMMARY.md!
         
         Implement logic to calculate points based on class year
-        
-        DON'T IMPLEMENT UNTIL YOU'VE WRITTEN YOUR TESTS!
         """
         pass
 
@@ -37,22 +32,16 @@ class HousingPriorityCalculator:
         """ 
         Return points based on graduation status.
 
-        IMPORTANT: Write your tests FIRST!
-
         Typical approach: graduating students get bonus points (e.g., 5),
         non-graduating students get 0. But you can design your own system.
         
         Implement logic for calculating points for a graduating student
-        
-        DON'T IMPLEMENT UNTIL YOU'VE WRITTEN YOUR TESTS!
         """
         pass
 
     def points_for_credits(self, num_credits: int) -> int:
         """
         Compute points based on credits earned.
-
-        IMPORTANT: Write your tests FIRST!
 
         Example systems:
         - 1 point per credit
@@ -66,16 +55,12 @@ class HousingPriorityCalculator:
         Document your system in SUMMARY.md!
         
         Implement points system for credits.
-        
-        DON'T IMPLEMENT UNTIL YOU'VE WRITTEN YOUR TESTS!
         """
         pass
 
     def points_for_additional_questions(self, responses: dict[str, bool]) -> int:
         """
         Given the dict from ask_additional_questions(), assign points.
-
-        IMPORTANT: Write your tests FIRST!
 
         Example:
         - 'old23': True → 2 points, False → 0 points
@@ -85,8 +70,6 @@ class HousingPriorityCalculator:
         Design your own questions and point values!
         
         Implement scoring logic.
-        
-        DON'T IMPLEMENT UNTIL YOU'VE WRITTEN YOUR TESTS!
         """
         pass
 
@@ -99,8 +82,6 @@ class HousingPriorityCalculator:
     ) -> int:
         """
         Calculate the total priority score based on all inputs.
-
-        IMPORTANT: Write your tests FIRST!
 
         This method should use all your other methods:
         total = (
@@ -122,6 +103,5 @@ class HousingPriorityCalculator:
             int: Total priority score
             
         Use the other methods you implemented to calculate total score
-        DON'T IMPLEMENT UNTIL YOU'VE WRITTEN YOUR TESTS!
         """
         pass
