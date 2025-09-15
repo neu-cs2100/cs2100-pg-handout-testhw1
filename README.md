@@ -191,10 +191,5 @@ Push all files to your repository:
    * `test_hw1.py` (fully implemented)
    * `Summary.md` (completed with scoring rationale)
 
-## Grading Rubric
-- **Test Quality**: Comprehensive, well-designed tests that cover edge cases (30%)
-- **Implementation**: All methods work correctly and make tests pass (25%)
-- **Object-Oriented Design**: Proper separation of concerns between classes (20%)
-- **Documentation**: Complete Summary.md with clear scoring rationale (25%)
 
 Good luck!
